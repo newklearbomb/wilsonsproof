@@ -1,7 +1,7 @@
 Proof of Wilson’s theorem by Rowan and Thomas
 
 Statement: 
- Prove that for any prime N, (n – 1)! modulo N is equal to n-1, and is not equal to N-1, if n is composite.
+Prove that for any prime N, (n – 1)! modulo N is equal to n-1, and is not equal to N-1, if n is composite.
 
 Proof if N is composite:
 If N is not a square number, then it will have two different factors, both smaller than itself. These numbers will be contained in the multiplication of all of the numbers between 1 and N-1. Because this is a multiple of N, it will be 0 modulo N.
@@ -24,4 +24,5 @@ Proof of 2: The only values of a, such that a × a is 1 modulo N is 1, and N-1, 
 Because we can prove these two things, then all of the pairs will multiply to 1 modulo N, and 1 multiplied with N -1, will be N-1. N-1 × 1 is clearly N-1. Therefore, all prime values of N, such that (N – 1)! modulo N will be N-1.
 
 Practical applications:
-Olympiad math & cryptography.
+Wilson's theorem is not generally used to test for large primes as factorials are computationally intensive and other better solutions are used. A interesting application is "Wilson's primes".
+as we know from the theorem, all primes satisfy (p-1)!≡-1 mod(p). This means that for any prime p, (p-1)!+1. A Wilson prime p satisfies (p-1)!≡-1 mod(p^2), which means that (p-1)!+1 is not only divisible by p, but also p^2. Only three are known: 5, 13, 563.
