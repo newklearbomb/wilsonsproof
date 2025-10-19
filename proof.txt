@@ -24,4 +24,7 @@ Proof of 2: The only values of a, such that a × a is 1 modulo N is 1, and N-1, 
 Because we can prove these two things, then all of the pairs will multiply to 1 modulo N, and 1 multiplied with N -1, will be N-1. N-1 × 1 is clearly N-1. Therefore, all prime values of N, such that (N – 1)! modulo N will be N-1.
 
 Practical applications:
-Olympiad math & cryptography.
+Wilson's theorem can be used as a test for primes, but is impractical for larger primes due to the computatinal effort required to calculate factorials of large numbers. However, it hold important theoretical value.
+Number theory:
+The standard proof for Wilson's theorem for a prime p relies on the idea of multiplication inverses. In the set{1,2,3,...,p-1}, every number has a unique multiplicative inverse, and most numbers can be paired with a different number that is their inverse. The only numbers that don't get paried are those that are their own inverse.
+ 
