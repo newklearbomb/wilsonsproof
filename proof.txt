@@ -24,7 +24,42 @@ Proof of 2: The only values of a, such that a × a is 1 modulo N is 1, and N-1, 
 Because we can prove these two things, then all of the pairs will multiply to 1 modulo N, and 1 multiplied with N -1, will be N-1. N-1 × 1 is clearly N-1. Therefore, all prime values of N, such that (N – 1)! modulo N will be N-1.
 
 Practical applications:
-Wilson's theorem can be used as a test for primes, but is impractical for larger primes due to the computatinal effort required to calculate factorials of large numbers. However, it hold important theoretical value.
-Number theory:
-The standard proof for Wilson's theorem for a prime p relies on the idea of multiplication inverses. In the set{1,2,3,...,p-1}, every number has a unique multiplicative inverse, and most numbers can be paired with a different number that is their inverse. The only numbers that don't get paried are those that are their own inverse.
- 
+Wilson's theorem can be used as a test for primes, but much better solutions exist already. However, it provides important insights.
+Problem 1: Calculating factorials of very large numbers is computationally impossible
+Example: 11
+(11-1)! = 3,628,800
+Example 2: 101
+(101-1)! = a 158 digit number
+Example 3: 1000001
+(1000001-1)! = according to ai, a 5565709 digit number
+To determine whether 1000001 is a prime, we must:
+1) Calculate the 5565709 digit number
+2) Add 1
+3) Check if the result is divisible by 1000001
+We need a better way.
+
+Insight: In math, reciprocals cancel out with their original numbers. What if this existed for modulo p?
+
+Concept: We need to find two numbers, a and b, such that a × b ≡ 1 mod (p). The number b is the modular inverse of number a.
+
+Statement: Take the list a, 2a, 3a, 4a...(p-1). This is a rearrangement of 1,2,3,...(p-1) with a as an variable. Since 1 is on the list, some multiple of a must be congruent to 1.
+However, is the inverse we have found the only one?
+
+Uniqueness(proof by contradiction)
+State a × b ≡ 1 mod(p)
+Now assume c also works, so a × c ≡ 1 mod(p)
+As both are true, a × b ≡ 1 mod(p)
+As both are true, a × b ≡ a × c mod(p).
+A is coprime to p, as p is prime and a is between 1 and p-1, so gcd(a,p) = 1
+Thus we can cancel a.
+Multiply both sides by b, use associativity to get (b × a) × b ≡ (b × a) × c
+So:
+b ≡ c mod(p)
+This means that b and c differ by a multiple of p. But, both b and c are in the same set {1,2,3,4,...(p-1)}. The only way for these two numbers to be congruent modulo p is if they are the same number.
+Therefore, our initial assumption that there was a different inverse is false.
+
+What does this show?
+Only the elements that are their own inverses satisfy x^2 ≡ 1, which for a prime only has solutions x ≡ 1 and x ≡ -1. Pairing other numbers with their inverses causes their product to be 1, rendering the only non-pairable element 1.
+
+Other applications:
+Quadratic reciprocity, proof of Leibniz result, converse of Fermat's little theroem
